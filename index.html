@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoyofest - Event-pass & Ticketing</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="craiyon_215444_image.png" alt="Hoyofest Logo" class="logo-img">
+      </div>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About us</a>
+        <button type="button" class="nav-cookie-btn" id="cookieBtn">Click for cookies</button>
+
+        <!-- User Authentication Status in Navbar -->
+        <div class="user-nav-status" id="userNavStatus">
+          <button type="button" class="btn-nav-login" id="navLoginBtn">Log in</button>
+          <div class="user-logged-box" id="userLoggedBox" style="display: none;">
+            <span class="user-badge" id="userBadgeName">👤 Dimas</span>
+            <button type="button" class="btn-nav-logout" id="logoutBtn" title="Keluar">Keluar</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="page-container">
+    
+    <!-- Hero Section Banner -->
+    <section class="hero-banner" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Event-pass<br>
+          Buy ticket online
+        </h1>
+        <p class="hero-desc">
+          Sistem e-tiketing dan registrasi-<br>
+          acara event seperti acara konser,<br>
+          anime, dan lain-lain nya
+        </p>
+        <button type="button" class="btn-buy" id="buyBtn">Buy Now</button>
+      </div>
+    </section>
+
+    <!-- About Us & Stats Section -->
+    <section class="about-section" id="about">
+      <div class="about-text-col">
+        <h2 class="about-title">About us</h2>
+        <p class="about-desc">
+          Kami adalah kelompok terkeren, suka menabung, Berwibawa, bijaksana, 
+          Suka menolong, Cinta alam, Suka menabung, rajin olahraga dan lain-lain 
+          nya. kami membuat website ini khusus untuk pembuatan acara event 
+          seperti acara konser, acara lombaevent dan lain-lain nya. Kami sangat 
+          cinta event karena itu lah kami membuat website ini, khusus anda untuk 
+          menghamburkan uang untuk event-event bagus disini, ilhamdi syahabana 
+          sebagai frontend, dimashidayat sebagai bakcend, azizi sebagai umbrella.
+        </p>
+      </div>
+
+      <div class="about-stats-col">
+        <p class="stats-label">Data orang yang cinta event</p>
+        <div class="stats-number-wrapper">
+          <span class="stats-count">40.000+</span>
+          <span class="stats-unit">manusia</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: LOGIN & REGISTER (DATABASE SQL) -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthModal" aria-label="Tutup">&times;</button>
+      
+      <div class="modal-tabs">
+        <button type="button" class="modal-tab active" id="tabLogin">Masuk (Login)</button>
+        <button type="button" class="modal-tab" id="tabRegister">Daftar Akun Baru</button>
+      </div>
+
+      <!-- Form Login -->
+      <form id="formLogin" class="auth-form active">
+        <p class="form-hint">Silakan login untuk membeli tiket Hoyofest:</p>
+        <div class="form-group">
+          <label for="loginUsername">Username</label>
+          <input type="text" id="loginUsername" placeholder="Contoh: dimas" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Masukkan password" required autocomplete="current-password">
+        </div>
+        <div class="auth-msg" id="loginMsg"></div>
+        <button type="submit" class="btn-modal-submit">Masuk Sekarang</button>
+        <p class="form-footer-note">💡 Akun siap pakai di database: <code>dimas</code> / password: <code>123456</code></p>
+      </form>
+
+      <!-- Form Register -->
+      <form id="formRegister" class="auth-form">
+        <p class="form-hint">Daftarkan akun baru ke database SQL Hoyofest:</p>
+        <div class="form-group">
+          <label for="regName">Nama Lengkap</label>
+          <input type="text" id="regName" placeholder="Contoh: Budi Santoso" required>
+        </div>
+        <div class="form-group">
+          <label for="regUsername">Username</label>
+          <input type="text" id="regUsername" placeholder="Pilih username unik" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="regPassword">Password</label>
+          <input type="password" id="regPassword" placeholder="Buat password" required autocomplete="new-password">
+        </div>
+        <div class="auth-msg" id="regMsg"></div>
+        <button type="submit" class="btn-modal-submit">Daftar Akun Baru</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: PEMBELIAN TIKET (DISIMPAN KE TABEL TICKETS DI SQL) -->
+  <div class="modal-overlay" id="ticketModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeTicketModal" aria-label="Tutup">&times;</button>
+      <h3 class="modal-title">🎟️ Beli Tiket Hoyofest</h3>
+      <p class="form-hint">Halo, <strong id="ticketBuyerName">Pengguna</strong>! Pilih kategori tiket event:</p>
+      
+      <form id="formTicket" class="auth-form active">
+        <div class="form-group">
+          <label for="ticketType">Pilihan Kategori Tiket</label>
+          <select id="ticketType" class="form-select">
+            <option value="Regular Pass" data-price="150000">Regular Pass - Rp 150.000</option>
+            <option value="VIP Hoyofest Pass" data-price="350000">VIP Hoyofest Pass - Rp 350.000</option>
+            <option value="Ultimate All-Access" data-price="500000">Ultimate All-Access - Rp 500.000</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Jumlah Tiket</label>
+          <div class="qty-control">
+            <button type="button" id="qtyMinus" class="qty-btn">-</button>
+            <input type="number" id="ticketQty" value="1" min="1" max="10" readonly>
+            <button type="button" id="qtyPlus" class="qty-btn">+</button>
+          </div>
+        </div>
+
+        <div class="total-price-box">
+          <span>Total Pembayaran:</span>
+          <strong id="totalPriceDisplay">Rp 150.000</strong>
+        </div>
+
+        <div class="auth-msg" id="ticketMsg"></div>
+        <button type="submit" class="btn-modal-submit" id="submitTicketBtn">Bayar & Simpan ke Database</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Fun Cookie Toast Notification -->
+  <div class="cookie-toast" id="cookieToast">
+    <div class="cookie-toast-icon">🍪</div>
+    <div class="cookie-toast-text">
+      <strong>Nih Cookies untuk kamu!</strong>
+      <span>Terima kasih sudah mampir ke website kelompok kami!</span>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT: LOGIKA AUTH DATABASE & TRANSAKSI -->
+  <script>
+    // State User Login (disimpan di LocalStorage)
+    let currentUser = JSON.parse(localStorage.getItem('hoyofest_user') || 'null');
+
+    // Elemen DOM
+    const userNavStatus = document.getElementById('userNavStatus');
+    const navLoginBtn = document.getElementById('navLoginBtn');
+    const userLoggedBox = document.getElementById('userLoggedBox');
+    const userBadgeName = document.getElementById('userBadgeName');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    const authModal = document.getElementById('authModal');
+    const closeAuthModal = document.getElementById('closeAuthModal');
+    const tabLogin = document.getElementById('tabLogin');
+    const tabRegister = document.getElementById('tabRegister');
+    const formLogin = document.getElementById('formLogin');
+    const formRegister = document.getElementById('formRegister');
+    const loginMsg = document.getElementById('loginMsg');
+    const regMsg = document.getElementById('regMsg');
+
+    const ticketModal = document.getElementById('ticketModal');
+    const closeTicketModal = document.getElementById('closeTicketModal');
+    const ticketBuyerName = document.getElementById('ticketBuyerName');
+    const ticketTypeSelect = document.getElementById('ticketType');
+    const ticketQtyInput = document.getElementById('ticketQty');
+    const qtyMinus = document.getElementById('qtyMinus');
+    const qtyPlus = document.getElementById('qtyPlus');
+    const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+    const formTicket = document.getElementById('formTicket');
+    const ticketMsg = document.getElementById('ticketMsg');
+    const buyBtn = document.getElementById('buyBtn');
+
+    // Perbarui UI Nav berdasarkan status login
+    function updateAuthUI() {
+      if (currentUser) {
+        navLoginBtn.style.display = 'none';
+        userLoggedBox.style.display = 'inline-flex';
+        userBadgeName.textContent = `👤 ${currentUser.name || currentUser.username}`;
+      } else {
+        navLoginBtn.style.display = 'inline-block';
+        userLoggedBox.style.display = 'none';
+      }
+    }
+
+    updateAuthUI();
+
+    // Event Logout
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('hoyofest_user');
+      currentUser = null;
+      updateAuthUI();
+      alert('Kamu telah berhasil logout.');
+    });
+
+    // Buka Modal Auth
+    function openAuth(tab = 'login') {
+      authModal.classList.add('show');
+      loginMsg.textContent = '';
+      regMsg.textContent = '';
+      if (tab === 'login') {
+        tabLogin.click();
+      } else {
+        tabRegister.click();
+      }
+    }
+
+    navLoginBtn.addEventListener('click', () => openAuth('login'));
+    closeAuthModal.addEventListener('click', () => authModal.classList.remove('show'));
+
+    // Tab Switcher Login vs Register
+    tabLogin.addEventListener('click', () => {
+      tabLogin.classList.add('active');
+      tabRegister.classList.remove('active');
+      formLogin.classList.add('active');
+      formRegister.classList.remove('active');
+      loginMsg.textContent = '';
+    });
+
+    tabRegister.addEventListener('click', () => {
+      tabRegister.classList.add('active');
+      tabLogin.classList.remove('active');
+      formRegister.classList.add('active');
+      formLogin.classList.remove('active');
+      regMsg.textContent = '';
+    });
+
+    // Tutup modal jika klik di area latar belakang hitam
+    window.addEventListener('click', (e) => {
+      if (e.target === authModal) authModal.classList.remove('show');
+      if (e.target === ticketModal) ticketModal.classList.remove('show');
+    });
+
+    // 1. Submit Form LOGIN (Koneksi ke Backend SQL)
+    formLogin.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('loginUsername').value.trim();
+      const password = document.getElementById('loginPassword').value.trim();
+
+      loginMsg.className = 'auth-msg info';
+      loginMsg.textContent = 'Memverifikasi ke database SQL...';
+
+      try {
+        const res = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          loginMsg.className = 'auth-msg success';
+          loginMsg.textContent = '✅ ' + data.message;
+          currentUser = data.user;
+          localStorage.setItem('hoyofest_user', JSON.stringify(currentUser));
+          updateAuthUI();
+
+          setTimeout(() => {
+            authModal.classList.remove('show');
+            openTicketModal();
+          }, 800);
+        } else {
+          loginMsg.className = 'auth-msg error';
+          loginMsg.textContent = '❌ ' + data.message;
+        }
+      } catch (err) {
+        loginMsg.className = 'auth-msg error';
+        loginMsg.textContent = '❌ Gagal terhubung ke server database.';
+      }
+    });
+
+    // 2. Submit Form REGISTER (Simpan user baru ke SQL)
+    formRegister.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('regName').value.trim();
+      const username = document.getElementById('regUsername').value.trim();
+      const password = document.getElementById('regPassword').value.trim();
+
+      regMsg.className = 'auth-msg info';
+      regMsg.textContent = 'Menyimpan akun baru ke database SQL...';
+
+      try {
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, username, password })
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          regMsg.className = 'auth-msg success';
+          regMsg.textContent = '✅ ' + data.message;
+          setTimeout(() => {
+            tabLogin.click();
+            document.getElementById('loginUsername').value = username;
+            document.getElementById('loginPassword').value = password;
+          }, 1200);
+        } else {
+          regMsg.className = 'auth-msg error';
+          regMsg.textContent = '❌ ' + data.message;
+        }
+      } catch (err) {
+        regMsg.className = 'auth-msg error';
+        regMsg.textContent = '❌ Gagal terhubung ke server database.';
+      }
+    });
+
+    // 3. Tombol BUY NOW: Cek apakah user sudah login
+    buyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (!currentUser) {
+        // Jika belum login -> Munculkan modal login
+        openAuth('login');
+      } else {
+        // Jika sudah login -> Buka form beli tiket
+        openTicketModal();
+      }
+    });
+
+    // Buka Modal Beli Tiket
+    function openTicketModal() {
+      ticketBuyerName.textContent = currentUser.name || currentUser.username;
+      ticketMsg.textContent = '';
+      calculateTotal();
+      ticketModal.classList.add('show');
+    }
+
+    closeTicketModal.addEventListener('click', () => ticketModal.classList.remove('show'));
+
+    // Hitung Total Bayar Tiket
+    function calculateTotal() {
+      const selectedOption = ticketTypeSelect.options[ticketTypeSelect.selectedIndex];
+      const price = Number(selectedOption.getAttribute('data-price') || 0);
+      const qty = Number(ticketQtyInput.value || 1);
+      const total = price * qty;
+      totalPriceDisplay.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+      return total;
+    }
+
+    ticketTypeSelect.addEventListener('change', calculateTotal);
+
+    qtyMinus.addEventListener('click', () => {
+      let qty = Number(ticketQtyInput.value);
+      if (qty > 1) {
+        ticketQtyInput.value = qty - 1;
+        calculateTotal();
+      }
+    });
+
+    qtyPlus.addEventListener('click', () => {
+      let qty = Number(ticketQtyInput.value);
+      if (qty < 10) {
+        ticketQtyInput.value = qty + 1;
+        calculateTotal();
+      }
+    });
+
+    // 4. Submit Form Beli Tiket -> Masuk ke Tabel tickets di Database SQL
+    formTicket.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const ticketType = ticketTypeSelect.value;
+      const quantity = Number(ticketQtyInput.value);
+      const totalPrice = calculateTotal();
+
+      ticketMsg.className = 'auth-msg info';
+      ticketMsg.textContent = 'Menyimpan pesanan tiket ke database SQL...';
+
+      try {
+        const res = await fetch('/api/buy-ticket', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userId: currentUser.id,
+            ticketType,
+            quantity,
+            totalPrice
+          })
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          ticketMsg.className = 'auth-msg success';
+          ticketMsg.textContent = '🎉 ' + data.message + ` (ID Tiket: #${data.ticketId})`;
+          setTimeout(() => {
+            alert(`Selamat ${currentUser.name}! Tiket "${ticketType}" (${quantity} tiket) berhasil dibeli dan tercatat di database SQL!`);
+            ticketModal.classList.remove('show');
+          }, 1000);
+        } else {
+          ticketMsg.className = 'auth-msg error';
+          ticketMsg.textContent = '❌ ' + data.message;
+        }
+      } catch (err) {
+        ticketMsg.className = 'auth-msg error';
+        ticketMsg.textContent = '❌ Gagal memproses ke database.';
+      }
+    });
+
+    // 5. Interaksi Cookie
+    const cookieBtn = document.getElementById('cookieBtn');
+    const cookieToast = document.getElementById('cookieToast');
+    let toastTimeout;
+
+    if (cookieBtn && cookieToast) {
+      cookieBtn.addEventListener('click', () => {
+        cookieToast.classList.add('show');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          cookieToast.classList.remove('show');
+        }, 3500);
+      });
+    }
+  </script>
+</body>
+</html>
