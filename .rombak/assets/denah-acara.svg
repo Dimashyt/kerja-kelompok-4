@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" width="500" height="450">
+  <defs>
+    <clipPath id="venueClip">
+      <rect width="500" height="450" rx="30" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#venueClip)">
+    <!-- Cream Background -->
+    <rect width="500" height="450" fill="#fff9ef" stroke="#ebdcc4" stroke-width="4" />
+
+    <!-- Floor Plan Border -->
+    <path d="M40,50 L420,40 L460,370 L260,420 L40,380 Z" fill="#fffcf7" stroke="#e0caa9" stroke-width="3" />
+
+    <!-- Pintu Masuk (Entry Door) -->
+    <g transform="translate(390, 45)">
+      <rect x="-35" y="-12" width="70" height="24" rx="4" fill="#eedcba" stroke="#b08b52" stroke-width="1.5" />
+      <text x="0" y="4" font-family="'Plus Jakarta Sans', Arial" font-size="10" font-weight="bold" fill="#694d22" text-anchor="middle">Pintu Masuk</text>
+    </g>
+
+    <!-- Pintu Keluar (Exit Door) -->
+    <g transform="translate(435, 275)">
+      <rect x="-35" y="-12" width="70" height="24" rx="4" fill="#eedcba" stroke="#b08b52" stroke-width="1.5" />
+      <text x="0" y="4" font-family="'Plus Jakarta Sans', Arial" font-size="10" font-weight="bold" fill="#694d22" text-anchor="middle">Pintu Keluar</text>
+    </g>
+
+    <!-- Zone 1: Toko Merchandise Event (Top Pink) -->
+    <rect x="150" y="70" width="160" height="65" rx="6" fill="#ffe3e3" stroke="#f0a8a8" stroke-width="2" />
+    <text x="230" y="105" font-family="'Plus Jakarta Sans', Arial" font-size="11" font-weight="bold" fill="#a83232" text-anchor="middle">Toko Merchandise Event</text>
+
+    <!-- Zone 2: Main Stage (Center Purple) -->
+    <rect x="150" y="160" width="130" height="85" rx="8" fill="#e8dff5" stroke="#beabdf" stroke-width="2" />
+    <text x="215" y="208" font-family="'Plus Jakarta Sans', Arial" font-size="13" font-weight="bold" fill="#583594" text-anchor="middle">Main Stage</text>
+
+    <!-- Zone 3: Zona Games (Left Cyan) -->
+    <rect x="70" y="85" width="65" height="110" rx="6" fill="#d8f3dc" stroke="#95d5b2" stroke-width="2" />
+    <text x="102" y="145" font-family="'Plus Jakarta Sans', Arial" font-size="11" font-weight="bold" fill="#2d6a4f" text-anchor="middle" transform="rotate(-90 102 145)">Zona Games</text>
+
+    <!-- Zone 4: Stan Foto (Bottom Left Yellow) -->
+    <rect x="68" y="240" width="40" height="40" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5" />
+    <text x="88" y="264" font-family="'Plus Jakarta Sans', Arial" font-size="9" font-weight="bold" fill="#854d0e" text-anchor="middle">Foto</text>
+
+    <!-- Zone 5: Booth Mini (Bottom Left Orange) -->
+    <rect x="115" y="240" width="40" height="40" rx="4" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5" />
+    <text x="135" y="264" font-family="'Plus Jakarta Sans', Arial" font-size="9" font-weight="bold" fill="#9a3412" text-anchor="middle">Mini</text>
+
+    <!-- Zone 6: Zona Antrian (Angled Cyan) -->
+    <polygon points="305,150 370,195 350,225 285,180" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="2" />
+    <text x="325" y="188" font-family="'Plus Jakarta Sans', Arial" font-size="9" font-weight="bold" fill="#0369a1" text-anchor="middle" transform="rotate(35 325 188)">Zona Antrian</text>
+
+    <!-- Zone 7: Zona Makanan dan Minuman (Right Orange) -->
+    <rect x="360" y="250" width="85" height="70" rx="6" fill="#ffedd5" stroke="#fdba74" stroke-width="2" />
+    <text x="402" y="280" font-family="'Plus Jakarta Sans', Arial" font-size="10" font-weight="bold" fill="#c2410c" text-anchor="middle">Zona Makanan</text>
+    <text x="402" y="295" font-family="'Plus Jakarta Sans', Arial" font-size="9" fill="#c2410c" text-anchor="middle">&amp; Minuman</text>
+
+    <!-- Zone 8: Gathering Area (Bottom Greenish Teal) -->
+    <polygon points="120,310 270,270 300,340 150,380" fill="#ccfbf1" stroke="#5eead4" stroke-width="2" />
+    <text x="210" y="330" font-family="'Plus Jakarta Sans', Arial" font-size="12" font-weight="bold" fill="#0f766e" text-anchor="middle" transform="rotate(-15 210 330)">Gathering Area</text>
+
+    <!-- Zone 9: Zona VIP (Bottom Right Pink) -->
+    <polygon points="305,270 390,230 430,300 345,340" fill="#fce7f3" stroke="#f472b6" stroke-width="2" />
+    <text x="365" y="290" font-family="'Plus Jakarta Sans', Arial" font-size="11" font-weight="bold" fill="#be185d" text-anchor="middle" transform="rotate(-25 365 290)">Zona VIP</text>
+  </g>
+</svg>

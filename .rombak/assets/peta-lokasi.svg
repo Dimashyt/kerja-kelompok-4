@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" width="500" height="450">
+  <defs>
+    <clipPath id="mapClip">
+      <rect width="500" height="450" rx="30" />
+    </clipPath>
+    <filter id="pinShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#mapClip)">
+    <!-- Map Background -->
+    <rect width="500" height="450" fill="#f5f1e8" />
+
+    <!-- Water body (River / Lake) -->
+    <path d="M350,450 C380,380 430,340 500,320 L500,450 Z" fill="#adc9e8" />
+    <path d="M360,450 C390,385 435,345 500,325" stroke="#8cb8e0" stroke-width="4" fill="none" />
+
+    <!-- Minor Streets -->
+    <line x1="0" y1="120" x2="500" y2="120" stroke="#ffffff" stroke-width="8" />
+    <line x1="0" y1="280" x2="500" y2="280" stroke="#ffffff" stroke-width="8" />
+    <line x1="120" y1="0" x2="120" y2="450" stroke="#ffffff" stroke-width="8" />
+    <line x1="280" y1="0" x2="280" y2="450" stroke="#ffffff" stroke-width="8" />
+    <line x1="420" y1="0" x2="420" y2="450" stroke="#ffffff" stroke-width="6" />
+
+    <!-- Major Highway / Orange Avenue -->
+    <path d="M0,200 C150,190 320,230 500,180" fill="none" stroke="#fcd34d" stroke-width="12" />
+    <path d="M0,200 C150,190 320,230 500,180" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="8,6" />
+
+    <!-- Building blocks -->
+    <rect x="30" y="30" width="70" height="70" rx="6" fill="#e8dfcf" />
+    <rect x="140" y="30" width="120" height="70" rx="6" fill="#e8dfcf" />
+    <rect x="300" y="40" width="100" height="60" rx="6" fill="#e8dfcf" />
+    <rect x="30" y="140" width="70" height="120" rx="6" fill="#e8dfcf" />
+    <rect x="140" y="140" width="120" height="120" rx="6" fill="#d9cebd" />
+    <rect x="300" y="240" width="90" height="150" rx="6" fill="#e8dfcf" />
+    <rect x="40" y="310" width="60" height="110" rx="6" fill="#e8dfcf" />
+    <rect x="140" y="310" width="120" height="110" rx="6" fill="#e8dfcf" />
+
+    <!-- Park Area -->
+    <rect x="150" y="150" width="100" height="100" rx="12" fill="#d1fae5" />
+    <circle cx="170" cy="180" r="10" fill="#a7f3d0" />
+    <circle cx="210" cy="200" r="14" fill="#a7f3d0" />
+    <circle cx="180" cy="220" r="12" fill="#a7f3d0" />
+
+    <!-- Location Markers / Pins -->
+    <!-- Event Center Pin (Hoyofest) -->
+    <g transform="translate(200, 175)" filter="url(#pinShadow)">
+      <path d="M0,0 C-10,0 -16,8 -16,18 C-16,30 0,44 0,44 C0,44 16,30 16,18 C16,8 10,0 0,0 Z" fill="#ea580c" />
+      <circle cx="0" cy="17" r="7" fill="#ffffff" />
+      <circle cx="0" cy="17" r="4" fill="#ea580c" />
+    </g>
+    <!-- Label -->
+    <rect x="155" y="145" width="90" height="20" rx="5" fill="#1e293b" />
+    <text x="200" y="159" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">HOYOFEST VENUE</text>
+
+    <!-- Pin 2: Halte / Station -->
+    <g transform="translate(90, 100)" filter="url(#pinShadow)">
+      <circle cx="0" cy="0" r="10" fill="#2563eb" />
+      <circle cx="0" cy="0" r="4" fill="#ffffff" />
+    </g>
+
+    <!-- Pin 3: Food / Cafe -->
+    <g transform="translate(350, 90)" filter="url(#pinShadow)">
+      <circle cx="0" cy="0" r="10" fill="#16a34a" />
+      <circle cx="0" cy="0" r="4" fill="#ffffff" />
+    </g>
+
+    <!-- Pin 4: Parking -->
+    <g transform="translate(100, 360)" filter="url(#pinShadow)">
+      <circle cx="0" cy="0" r="10" fill="#ca8a04" />
+      <circle cx="0" cy="0" r="4" fill="#ffffff" />
+    </g>
+  </g>
+</svg>
