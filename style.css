@@ -215,4 +215,19 @@ body {
     border-radius: 20px;
     display: block;
 }
+.footer {
+    margin-top: 90px;
+    margin-bottom: 40px;
+}
+.footer-card {
+    background-color: #C7223D;
+    border-radius: 35px;
+    padding: 45px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+    gap: 100px;
+}
+
 
