@@ -1,39 +1,43 @@
 body {
-  margin: 0;
-  background: linear-gradient(220deg, rgba(255, 145, 0, 1) 0%, rgba(158, 0, 31, 1) 100%);
-  font-family: Poppins;
+    margin: 0;
+    background: linear-gradient(220deg, rgba(255, 145, 0, 1) 0%, rgba(158, 0, 31, 1) 100%);
+    font-family: Poppins;
 }
+
 .container {
     max-width: 1700px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
-.logo-bini{
-  width: 85px;
+.logo-bini {
+    width: 85px;
 }
 
-.logo-bini img{
-  width: 100%;
+.logo-bini img {
+    width: 100%;
 }
 
 .navigasi {
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
 }
+
 .menu {
     margin-left: auto;
     margin-right: auto;
     display: flex;
     gap: 45px;
 }
+
 .menu a {
     text-decoration: none;
     color: black;
     font-size: 1.5rem;
     gap: 45px;
 }
+
 .background {
     background-image: url(wallpaper.jpeg);
     background-size: cover;
@@ -45,19 +49,23 @@ body {
     box-sizing: border-box;
     padding: 70px 80px;
 }
+
 .background-text {
     max-width: 400px;
 }
+
 .background-text p {
     color: #FFA93A;
     font-size: 1.35rem;
 }
+
 .background-text h1 {
-    color:#FFA93A;
+    color: #FFA93A;
     font-size: 2.2rem;
     margin: 0 0 15px 0;
     line-height: 1.15;
 }
+
 .beli-tiket {
     display: inline-block;
     background-color: #FFA93A;
@@ -66,52 +74,62 @@ body {
     padding: 14px 15px;
     border-radius: 14px;
     font-size: 1.35rem;
-    line-height:1.45;
+    line-height: 1.45;
     margin-bottom: 25px;
 }
+
 .about {
     max-width: 90%;
-    margin:60px auto;
+    margin: 60px auto;
     display: flex;
     gap: 80px;
 }
-.about-kiri{
+
+.about-kiri {
     flex: 1.5;
 }
+
 .about-kiri h2 {
     font-size: 2.8rem;
     color: #000000;
     margin-bottom: 15px;
 }
+
 .about-kiri p {
     font-size: 1.2rem;
     color: #000000;
     margin-bottom: 15px;
 }
+
 .about-kanan {
     flex: 0;
 }
+
 .label-angka {
     font-size: 1.3rem;
     color: #000000;
     margin-bottom: 15px;
 }
+
 .stat-angka {
     font-size: 4rem;
     color: #000000;
     font-weight: bold;
-    margin:0;
+    margin: 0;
 }
+
 .angka-snap {
     display: flex;
     align-items: baseline;
     gap: 8px;
 }
+
 .manusia {
     font-size: 1rem;
     font-weight: bold;
     color: #4a1205;
 }
+
 .tiket-head {
     display: flex;
     justify-content: space-between;
@@ -120,24 +138,31 @@ body {
     margin-top: 70px;
     margin-bottom: 25px;
 }
-.tiket-1 h2, .tiket-2 h2 {
+
+.tiket-1 h2,
+.tiket-2 h2 {
     font-size: 2.2rem;
     color: #3a0801;
     margin-bottom: 5px;
 }
-.tiket-1 p,.tiket-2 p {
+
+.tiket-1 p,
+.tiket-2 p {
     color: #3a0801;
     margin: 0;
 }
+
 .simbol {
     font-size: 2.5rem;
     color: #3a0801;
 }
+
 .tiket-list {
     display: flex;
     gap: 30px;
     align-items: stretch;
 }
+
 .kartu-tiket {
     flex: 1;
     background-color: #530011;
@@ -148,13 +173,23 @@ body {
     align-items: center;
     text-align: center;
     border-radius: 30px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.kartu-tiket:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
 .kartu-special {
     flex: 1.2;
 }
+
 .kartu-img {
     height: 149px;
 }
+
 .kartu-img-chest {
     height: 140px;
     object-fit: contain;
@@ -166,16 +201,19 @@ body {
     font-size: 2rem;
     margin: 5px 0 20px 0;
 }
+
 .label-harga {
     font-size: 1.1rem;
     font-style: italic;
     color: #ffbe73;
 }
+
 /*----------------------------------------------------ending?-----------------------------*/
 .kartu-desc h4 {
     margin: 0 0 8px 0;
     font-size: 1.05rem;
 }
+
 .kartu-desc p {
     font-size: 0.88rem;
     color: #ffd6be;
@@ -191,22 +229,29 @@ body {
     margin-top: 70px;
     margin-bottom: 25px;
 }
-.peta-1 h2, .peta-2 h2 {
+
+.peta-1 h2,
+.peta-2 h2 {
     font-size: 2.2rem;
     color: #3a0801;
     margin-bottom: 5px;
 }
-.peta-1 p,.peta-2 p {
+
+.peta-1 p,
+.peta-2 p {
     color: #3a0801;
     margin: 0;
 }
+
 .peta-list {
     display: flex;
     gap: 30px;
 }
+
 .kartu-peta {
     flex: 1;
 }
+
 .kartu-peta .img-denah {
     width: 100%;
     height: 360px;
@@ -215,10 +260,12 @@ body {
     border-radius: 20px;
     display: block;
 }
+
 .footer {
     margin-top: 90px;
     margin-bottom: 40px;
 }
+
 .footer-card {
     background-color: #C7223D;
     border-radius: 35px;
@@ -230,4 +277,48 @@ body {
     gap: 100px;
 }
 
+.judul-contact {
+    display: inline-block;
+    background-color: #FFA93A;
+    color: #3a0801;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
 
+.footer-kiri p {
+    color: #ffffff;
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+.footer-kiri a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-kiri a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 0.85rem;
+}
+
+.footer-bottom a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+@media (width >=540px) {
+    body {
+        grid-template-columns: 480px;
+        justify-content: center;
+    }
+}

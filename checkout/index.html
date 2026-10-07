@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event-Pass Pay</title>
+  <!-- Google Fonts: Poppins & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card-wrapper">
+    <div class="card-container">
+      
+      <!-- Kolom Kiri: Form Pembayaran -->
+      <section class="card-left">
+        <h1 class="card-title">Event-Pass Pay</h1>
+
+        <div class="info-pill">
+          <span class="info-label">Total</span>
+          <span class="info-value" id="displayTotal">Rp 67.000</span>
+        </div>
+
+        <div class="info-pill">
+          <span class="info-label" id="displayNamaTiket">Tiket Event Normal</span>
+          <div class="info-right">
+            <span class="info-price" id="displayHargaTiket">Rp 67.000</span>
+            <span class="ticket-icon" aria-hidden="true">
+              <!-- SVG Ticket Tag Icon with 'x' -->
+              <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 3.5C2.5 2.67 3.17 2 4 2H16.8C17.3 2 17.78 2.25 18.06 2.67L22.4 9.17C22.75 9.69 22.75 10.31 22.4 10.83L18.06 17.33C17.78 17.75 17.3 18 16.8 18H4C3.17 18 2.5 17.33 2.5 16.5V3.5Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M7.5 7.5L13.5 13.5M13.5 7.5L7.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <form class="pay-form" id="payForm">
+          <!-- Input Email -->
+          <div class="form-group">
+            <label for="email" class="input-label">Email</label>
+            <div class="input-row">
+              <span class="input-icon" aria-hidden="true">
+                <!-- SVG Envelope Icon -->
+                <svg width="22" height="18" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.5" y="2.5" width="21" height="15" rx="2.5" stroke="#530011" stroke-width="2.5"/>
+                  <path d="M2.5 4.5L12 11.5L21.5 4.5" stroke="#530011" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <input type="email" id="email" class="form-input" placeholder="Enter your Email" required autocomplete="email">
+            </div>
+          </div>
+
+          <!-- Input Username -->
+          <div class="form-group">
+            <label for="username" class="input-label">Username</label>
+            <div class="input-row">
+              <span class="input-icon" aria-hidden="true">
+                <!-- SVG Smiley Face Icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="#530011" stroke-width="2.5"/>
+                  <circle cx="8.5" cy="9.5" r="1.5" fill="#530011"/>
+                  <circle cx="15.5" cy="9.5" r="1.5" fill="#530011"/>
+                  <path d="M8 15.5H16" stroke="#530011" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <input type="text" id="username" class="form-input" placeholder="Enter your username" required autocomplete="username">
+            </div>
+          </div>
+
+          <!-- Tombol Submit -->
+          <button type="submit" class="btn-submit">Buy instance</button>
+        </form>
+      </section>
+
+      <!-- Kolom Kanan: Karakter & Promo Banner -->
+      <section class="card-right">
+        <div class="character-wrapper">
+          <img src="86879-firefly.png" alt="Event Character" class="character-img">
+        </div>
+        <div class="card-right-content">
+          <h2 class="promo-title">Pay to buy pass-Event</h2>
+          <p class="promo-subtitle">make buy ticket esier</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
