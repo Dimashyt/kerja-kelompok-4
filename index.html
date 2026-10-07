@@ -1,137 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontoo</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-  <header class="navigasi">
-    <div class="logo-bini">
-      <img src="86879-firefly.png" alt="logo">
-    </div>
-    <div class="menu">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#harga">harga</a>
-      <a href="#Peta">Peta</a>
-    </div>
-  </header>
-  <section class="background">
-    <div class="background-text">
-      <h1>Event pass</h1>
-      <h1>Buy ticket online</h1>
-      <p>Sistem e-tiketing dan registrasi acara event seperti acara konser, anime, dan lain-lain nya</p>
-      <a href="#harga" class="beli-tiket">Beli tiket</a>
-    </div>
-  </section>
-  <section class="about" id="about">
-    <div class="about-kiri">
-      <h2>About us</h2>
-      <p>Kami adalah kelompok terkeren, suka menabung, Berwibawa, bijaksana, 
-Suka menolong, Cinta alam, Suka menabung, rajin olahraga dan lain-lain 
-nya. kami membuat website ini khusus untuk pembuatan acara event 
-seperti acara konser, acara lombaevent dan lain-lain nya. Kami sangat 
-cinta event karena itu lah kami membuat website ini, khusus anda untuk
-menghamburkan uang untuk event-event bagus disini, ilhamdi syahabana 
-sebagai frontend, dimashidayat sebagai bakcend, azizi sebagai umbrella.</p>
-    </div>
-    <div class="about-kanan">
-      <p class="label-angka">Data orang yang cinta event</p>
-      <div class="angka-snap">
-      <h1 class="stat-angka">40.000+</h1>
-      <span class="manusia">manusia</span>
-      </div>
-    </div>
-  </section>
-  <section class="harga" id="harga">
-    <div class="tiket-head">
-      <div class="tiket-1">
-        <h2>TICKET EVENT MENU</h2>
-        <p>Pembelian tiket standar dan special</p>
-      </div>
-      <div class="simbol">&</div>
-      <div class="tiket-2">
-        <h2>HADIAH SPECIAL</h2>
-        <p>Hadiah suprise hanya ada di bawah ini saja</p>
-      </div>
-    </div>
-    <div class="tiket-list">
-      <div class="kartu-tiket">
-        <img src=".rombak/assets/ticket-normal.png" alt="Tiket Normal" class="kartu-img">
-        <span class="label-harga">harga</span>
-        <h3 class="nominal-harga">67.000IDR</h3>
-        <div class="kartu-desc">
-          <h4>Tiket Event Normal :</h4>
-          <p>Akses tanpa batas selama 1 hari</p>
-          <p>Akses Masuk stnadar – Masuk dimulai pukul 10:00</p>
-        </div>
-      </div>
-      <div class="kartu-tiket">
-        <img src=".rombak/assets/ticket-unlimited.png" alt="Tiket Unlimited" class="kartu-img">
-        <span class="label-harga">harga</span>
-        <h3 class="nominal-harga">267.000IDR</h3>
-        <div class="kartu-desc">
-          <h4>Tiket event Ulimited :</h4>
-          <p>Akses tak terbatas untuk seluruh event</p>
-          <p>Akses Masuk stnadar – Masuk dimulai pukul 10:00</p>
-        </div>
-      </div>
-      <div class="kartu-tiket kartu-special">
-        <img src=".rombak/assets/chest-special.png" alt="Hadiah Special" class="kartu-img-chest">
-        <span class="label-harga">harga</span>
-        <h3 class="nominal-harga">167.000IDR</h3>
-        <div class="kartu-desc">
-          <h4>Paket 3 special :</h4>
-          <p>Akses tanpa batas selama 1 hari</p>
-          <p>Hak VIP atau Akses prioritas- masuk dimulai pukul 9:00</p>
-          <p>Jaminan mendapatkan merchandise di Zona check in</p>
-          <p>Setelah menyelesaikan misi tertentu</p>
-          <p>1 Paspor kenangan eklusif</p>
-          <p>1 Lanyard eksklusif dan ID</p>
-          <p>1 Tiket Undian</p>
-        </div>
-      </div>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    />
+    <link rel="stylesheet" href="css.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-------------Main content---------------->
+    <section class="login">
+      <div class="Login_content">
+        <div>
+          <h2 class="login__title">Sign in</h2>
+          <form action="" method="post" class="Login__form">
+            <div class="Login__grup">
+              <div class="Login__box">
+                <!-- email input-->
+                <i class="ri-mail-fill Login__icon"></i>
+                <input
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  placeholder=" "
+                  class="Login__input"
+                  id="email"
+                />
+                <label for="email" class="Login__label">Email</label>
+                <!-- email input-->
+              </div>
 
-  </section>
-   <section class="peta" id="Peta">
-    <div class="peta-head">
-      <div class="peta-1">
-        <h2>LOKASI EVENT</h2>
+              <!-- password input-->
+              <div class="Login__box">
+                <i class="ri-lock-2-fill Login__icon"></i>
+                <input
+                  type="password"
+                  name="password"
+                  autocomplete="current-password"
+                  required
+                  placeholder=" "
+                  class="Login__input"
+                  id="password"
+                />
+                <label for="password" class="Login__label">Password</label>
+                <!-- password input-->
+              </div>
+            </div>
+
+            <a href="#" class="Login__forgot">Forgot Password?</a>
+            <button type="submit" class="Login__button">
+              Sign in
+              <i class="ri-send-plane-2-fill"></i>
+            </button>
+
+            <p class="Login__sign">
+              Don't have an account? <a href="#">Sign up</a>
+            </p>
+          </form>
+        </div>
+        <div class="Login__image">
+          <img src="img/sparxie.png" alt="" class="Login__img" />
+        </div>
       </div>
-      <div class="simbol">&</div>
-      <div class="peta-2">
-        <h2>DENAH EVENT</h2>
-        <p>Denah Event dapat berubah.</p>
-      </div>
-    </div>
-  <div class="peta-list">
-    <div class="kartu-peta">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8757.598856582103!2d106.77389460830734!3d-6.2660379709455185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1268f25b3a7%3A0xe3167abde363198c!2sCity%20Hall%20Pondok%20Indah%20Mall%203!5e0!3m2!1sid!2sid!4v1791306429951!5m2!1sid!2sid" width="100%" height="360" style="border:0;border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
-    <div class="kartu-peta">
-        <img src="image.png" alt="Denah Event Hoyofest" class="img-denah">
-    </div>
     </section>
-  </div>
-    <footer class="footer" id="contact">
-      <div class="footer-card">
-        <div class="footer-kiri">
-          <span class="judul-contact">Contact us:</span>
-          <p>Email : <a href="href="mailto:dimaskoingoding@gmail.com">dimaskoingoding@gmail.com</a></p>
-          <p>Phone : <a href="href="tel:+6782105054839">+67-821-0505-4839</a></p>
-          <p>Address: Gg.Mulya, Prov.Riau, Kab.Bengkalis, Senggoro 28712</p>
-        </div>
-        <div class="footer-gambar"></div>
-        <div class="footer-bottom">
-          <span>2026 Kelompok 4. All Rights Reserved.</span>
-          <a href="#kosong">Privacy Policy</a>
-        </div>
-      </div>
-    </footer>
-  </div>
-</body>
+    <!-------------login container---------------->
+
+    <!-------------Left container---------------->
+
+    <!-------------Right container---------------->
+  </body>
 </html>
