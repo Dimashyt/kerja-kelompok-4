@@ -15,7 +15,7 @@ Sistem e-ticketing dan registrasi acara event (konser, anime, dan lainnya).
 <a href="https://www.figma.com/design/lMvP9gvvkAzQCuu0GxtWjX/Untitled?node-id=0-1&t=drohRIFwmAknjvGL-1">
     <img src="assets/figma.png" alt="Figma">
 </a>
-<div align="center">klik gambar buat view design figma kami</div>
+<p style="text-align: center;">klik gambar buat view design figma kami</p>
 
 ## Trello
 
@@ -29,6 +29,9 @@ Sistem e-ticketing dan registrasi acara event (konser, anime, dan lainnya).
 </a>
 <br/>
 
-
+## AKHIRAN
 <img src="assets/ezgif.com-optimize.gif">
-<div align="center">lapa lapa apa yang tak ada ?? lapangan pekerjaan. --hamdi</div>
+<div style="text-align: center;">
+tetap tepat waktu walaupun designer bikin visual bagus banget. <br/>
+tetap kreatif terus  hamdi
+</div>
