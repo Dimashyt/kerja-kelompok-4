@@ -39,7 +39,7 @@ body {
 }
 
 .background {
-    background-image: url(wallpaper.jpeg);
+    background-image: url(assets/wallpaper.jpeg);
     background-size: cover;
     background-position: center;
     min-height: 640px;

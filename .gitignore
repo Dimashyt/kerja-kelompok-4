@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment & Temp Files
+.env
+*.log
+
+# Windows & OS Junk
+Thumbs.db
+desktop.ini
+*.lnk
+.DS_Store
+
+# SQLite temporary and journal files
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite-journal
