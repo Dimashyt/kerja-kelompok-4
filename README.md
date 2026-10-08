@@ -31,7 +31,7 @@ Sistem e-ticketing dan registrasi acara event (konser, anime, dan lainnya).
 
 ## AKHIRAN
 <img src="assets/ezgif.com-optimize.gif">
-<div style="text-align: center;">
+<div align="center">
 tetap tepat waktu walaupun designer bikin visual bagus banget. <br/>
 tetap kreatif terus  hamdi
 </div>
