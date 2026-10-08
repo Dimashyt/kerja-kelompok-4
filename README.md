@@ -2,7 +2,7 @@
 
 Sistem e-ticketing dan registrasi acara event (konser, anime, dan lainnya).
 
-- **Trello Project Board**: https://trello.com/invite/b/6ac5b8d33d39c3e1183be58b/ATTI1d15b52f7707292a9e228ad8bb4a616f522A4521/project-event-pass
+- **Trello**: https://trello.com/invite/b/6ac5b8d33d39c3e1183be58b/ATTI1d15b52f7707292a9e228ad8bb4a616f522A4521/project-event-pass
 
 ### Anggota Kelompok 4
 - **Frontend**: Ilhamdi Syahabana
