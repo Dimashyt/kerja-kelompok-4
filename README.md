@@ -9,6 +9,6 @@ Sistem e-ticketing dan registrasi acara event (konser, anime, dan lainnya).
 - **Backend**: Dimas Hidayat
 - **Umbrella**: Azizi
 
-<p>lapa lapa apa yang tak ada ?? lapangan pekerjaan.</p>
+<p style="text-align: center;">lapa lapa apa yang tak ada ?? lapangan pekerjaan.</p>
 
 <img src="https://upload-os-bbs.hoyolab.com/upload/2026/07/01/45b54ad57e6bf9a730031c136aa4249e_4128803920028948272.png" alt="Deskripsi">
