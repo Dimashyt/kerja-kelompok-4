@@ -7,19 +7,31 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
     />
-    <link rel="stylesheet" href="login.css" />
-    <title>Hoyofest - Sign In</title>
+    <link rel="stylesheet" href="daftar.css" />
+    <title>Hoyofest - Sign Up</title>
   </head>
   <body>
-    <!-------------Main content---------------->
     <section class="login">
       <div class="Login_content">
         <div>
-          <h2 class="login__title">Sign in</h2>
+          <h2 class="login__title">Sign up</h2>
           <form action="" method="post" class="Login__form">
             <div class="Login__grup">
               <div class="Login__box">
-                <!-- email input-->
+                <i class="ri-user-3-fill Login__icon"></i>
+                <input
+                  type="text"
+                  name="username"
+                  autocomplete="username"
+                  required
+                  placeholder=" "
+                  class="Login__input"
+                  id="username"
+                />
+                <label for="username" class="Login__label">Username</label>
+              </div>
+
+              <div class="Login__box">
                 <i class="ri-mail-fill Login__icon"></i>
                 <input
                   type="email"
@@ -31,34 +43,44 @@
                   id="email"
                 />
                 <label for="email" class="Login__label">Email</label>
-                <!-- email input-->
               </div>
 
-              <!-- password input-->
               <div class="Login__box">
                 <i class="ri-lock-2-fill Login__icon"></i>
                 <input
                   type="password"
                   name="password"
-                  autocomplete="current-password"
+                  autocomplete="new-password"
                   required
                   placeholder=" "
                   class="Login__input"
                   id="password"
                 />
                 <label for="password" class="Login__label">Password</label>
-                <!-- password input-->
+              </div>
+
+              <div class="Login__box">
+                <i class="ri-lock-password-fill Login__icon"></i>
+                <input
+                  type="password"
+                  name="confirm_password"
+                  autocomplete="new-password"
+                  required
+                  placeholder=" "
+                  class="Login__input"
+                  id="confirm_password"
+                />
+                <label for="confirm_password" class="Login__label">Confirm Password</label>
               </div>
             </div>
 
-            <a href="#" class="Login__forgot">Forgot Password?</a>
             <button type="submit" class="Login__button">
-              Sign in
-              <i class="ri-send-plane-2-fill"></i>
+              Sign up
+              <i class="ri-user-add-fill"></i>
             </button>
 
             <p class="Login__sign">
-              Don't have an account? <a href="daftar.html">Sign up</a>
+              Already have an account? <a href="login.html">Sign in</a>
             </p>
           </form>
         </div>

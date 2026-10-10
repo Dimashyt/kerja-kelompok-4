@@ -11,10 +11,16 @@ body {
 
 .logo-bini {
     width: 85px;
+    display: flex;
+    
 }
 
-.logo-bini img {
+.logo-bini img  {
     width: 100%;
+}
+.judul {
+    margin-left: 15px;
+    font-size: 1.5rem;
 }
 
 .navigasi {
@@ -22,6 +28,15 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
+}
+.Tombol {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.5rem;
+    
+}
+.Tombol img {
+    width: 15px;
 }
 
 .menu {
@@ -71,7 +86,7 @@ body {
     background-color: #FFA93A;
     color: #4a0c02;
     text-decoration: none;
-    padding: 14px 15px;
+    padding: 14px 30px;
     border-radius: 14px;
     font-size: 1.35rem;
     line-height: 1.45;
@@ -303,18 +318,6 @@ body {
     text-decoration: underline;
 }
 
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    color: #ffffff;
-    font-size: 0.85rem;
-}
-
-.footer-bottom a {
-    color: #ffffff;
-    text-decoration: underline;
-}
 
 @media (width >=540px) {
     body {

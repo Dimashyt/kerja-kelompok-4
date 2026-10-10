@@ -15,7 +15,7 @@ Sistem e-ticketing dan registrasi acara event (konser, anime, dan lainnya).
 <a href="https://www.figma.com/design/lMvP9gvvkAzQCuu0GxtWjX/Untitled?node-id=0-1&t=drohRIFwmAknjvGL-1">
     <img src="assets/figma.png" alt="Figma">
 </a>
-<p style="text-align: center;">klik gambar buat view design figma kami</p>
+<p align="center">klik gambar buat view design figma kami</p>
 
 ## Trello
 

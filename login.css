@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* variable */
+:root {
+  /* color */
+  --first-color: hsl(350, 84%, 30%);
+  --first-color-alt: hsl(350, 59%, 51%);
+  --border-color: hsl(39, 100%, 79%);
+  --title-color: hsl(0, 90%, 31%);
+  --text-color: hsl(0, 79%, 34%);
+  --body-color: hsl(0, 87%, 30%);
+  --container-color: hsl(41, 98%, 51%);
+  --title-color-alt: hsl(39, 100%, 57%);
+
+  /*font and typography */
+  /*.5rem = 8px | 1rem = 16px */
+  --body-font: "poppins", sans-serif;
+  --big-font-size: 1.5rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+}
+
+/* responsive typography */
+@media screen and (width >= 1150px) {
+  :root {
+    --big-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: 480px;
+}
+
+/* login page */
+.login {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  margin-inline: 1rem;
+}
+
+.Login__img {
+  display: none;
+}
+
+.Login_content {
+  box-shadow: 0 4px 24px hsla(270, 4%, 20%, 0.5);
+  padding: 3.5rem 1.5rem;
+  border-radius: 1.5rem;
+  background-color: var(--container-color);
+}
+
+.login__title {
+  font-size: var(--big-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.Login__grup {
+  display: grid;
+  row-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.Login__box {
+  position: relative;
+  height: 64px;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.Login__icon {
+  position: absolute;
+  left: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: initial;
+}
+
+.Login__label {
+  position: absolute;
+  left: 3.25rem;
+  transition: opacity 0.4s;
+}
+
+.Login__input {
+  width: 100%;
+  height: 100%;
+  margin-left: 3.25rem;
+  font-weight: 600;
+  z-index: 2;
+  background: transparent;
+  color: var(--title-color);
+}
+
+.Login__input:focus + .Login__label,
+.Login__input:not(:placeholder-shown) + .Login__label {
+  opacity: 0;
+}
+
+.Login__input:autofill {
+  transition:
+    background-color 5000s,
+    color 5000s;
+}
+
+.Login__forgot {
+  display: block;
+  width: max-content;
+  margin: 0 0 3rem auto;
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+}
+
+.Login__button {
+  width: 100%;
+  height: 64px;
+  background-color: var(--first-color);
+  color: var(--title-color-alt);
+  border-radius: 4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.Login__button i {
+  font-weight: initial;
+  font-size: 1.5rem;
+}
+
+.Login__button:hover {
+  background-color: var(--first-color-alt);
+}
+
+.Login__sign {
+  text-align: center;
+  font-size: var(--small-font-size);
+}
+
+.Login__sign a {
+  color: var(--title-color);
+}
+/*=====breakpoints====*/
+/* for medium devices */
+@media (width >= 540px) {
+  .login {
+    grid-template-columns: 400px;
+    justify-content: center;
+  }
+}
+/* for large devices */
+@media (width >= 1150px) {
+  .login {
+    grid-template-columns: initial;
+  }
+  .Login__image {
+    overflow: hidden;
+    border-radius: 3rem;
+  }
+
+  .Login__img {
+    display: block;
+    width: 500px;
+    border-radius: 3rem;
+  }
+
+  .Login_content {
+    display: grid;
+    grid-template-columns: 360px 480px;
+    column-gap: 7rem;
+    align-items: center;
+    padding: 1rem 1.5rem 1.5rem 7rem;
+    border-radius: 4rem;
+    overflow: hidden;
+  }
+}
