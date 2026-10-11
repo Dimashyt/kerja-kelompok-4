@@ -1,0 +1,79 @@
+:root {
+  /* color */
+  --first-color: hsl(350, 84%, 30%);
+  --first-color-alt: hsl(350, 89%, 63%);
+  --border-color: hsla(0, 100%, 70%, 0.37);
+  --title-color: hsl(0, 90%, 31%);
+  --text-color: hsl(0, 30%, 96%);
+  --body-color: hsl(0, 87%, 30%);
+  --container-color: hsl(41, 98%, 51%);
+  --title-color-alt: hsl(39, 100%, 70%);
+
+  /*font and typography */
+  /*.5rem = 8px | 1rem = 16px */
+  --body-font: "poppins", sans-serif;
+  --big-font-size: 1.5rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--container-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-card {
+  width: 100%;
+  height: 100%;
+  max-width: 450px;
+  max-height: 500px;
+  text-align: center;
+  background-color: var(--first-color);
+  color: var(--text-color);
+  border-radius: 40px;
+}
+
+.cover_pic {
+  display: block;
+  width: 100%;
+  border-radius: 40px;
+  margin-top: -30px;
+}
+
+.profile_pic {
+  width: 140px;
+  border-radius: 20px;
+  margin-top: -75px;
+  box-shadow: 0 4px 34px hsl(0, 23%, 17%);
+}
+
+.profile-card h1 {
+  font-weight: var(--normal-font-size);
+  background-color: var(--border-color);
+  width: 57%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  padding: 5px;
+}
+.text {
+  display: grid;
+  gap: 5px;
+  padding: 20px;
+}
+
+.ri-arrow-go-back-line {
+  color: var(--body-color);
+  margin-left: -390px;
+  position: relative;
+}
