@@ -88,10 +88,44 @@ img {
   gap: 20px;
 }
 #contoh {
-  width: 386px;
-  height: 366px;
-  background-color: rgb(109, 65, 73);
+  width: 320px;
+  height: 320px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
 }
+
+.qr_img {
+  width: 270px;
+  height: 270px;
+  display: block;
+}
+
+.btn-bayar {
+  background-color: var(--first-color);
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+  margin: 10px auto 0;
+  display: block;
+}
+
+.btn-bayar:hover {
+  background-color: var(--first-color-alt);
+  transform: translateY(-2px);
+}
+
 .scan_title {
   margin-left: auto;
   margin-right: auto;

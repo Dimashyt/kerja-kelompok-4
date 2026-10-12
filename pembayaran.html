@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pembayaran Tiket - Hoyofest</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    />
+    <link rel="stylesheet" href="struk.css" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="struk">
+        <div class="box_1">
+          <div class="text">
+            <h2>Selesaikan Pembayaran Kamu</h2>
+            <h4>Silakan scan kode QRIS di bawah ini untuk menyelesaikan transaksi.</h4>
+            <div class="order-badge">
+              <span id="displayOrderId">HOYO00001X</span> &bull; 
+              <span id="displayTipe">Tiket Event Normal</span> &bull; 
+              <span id="displayTotal">Rp 67.000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="box_2">
+          <div class="scan">
+            <h3 class="scan_title">Scan QRIS Pembayaran</h3>
+            <div id="contoh">
+              <img
+                id="qrImg"
+                src="assets/Screenshot_2026-10-11-21-36-25-565_com.whatsapp-edit.jpg"
+                alt="QRIS Pembayaran"
+                class="qr_img"
+              />
+            </div>
+            <button class="btn-bayar" onclick="konfirmasiBayar()">Saya sudah bayar</button>
+          </div>
+          <div class="gambar">
+            <img
+              src="assets/nihilux.png"
+              alt="Mascot Hoyofest"
+              class="evanescia"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="pembayaran.js"></script>
+  </body>
+</html>

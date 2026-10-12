@@ -20,6 +20,8 @@ document.getElementById('payForm').addEventListener('submit', async (e) => {
 
   const payload = {
     nama_pembeli: `${username} (${email})`,
+    nama: username,
+    email: email,
     jenis_tiket: tiket.nama,
     jumlah: 1,
     total_harga: tiket.harga
@@ -34,8 +36,7 @@ document.getElementById('payForm').addEventListener('submit', async (e) => {
     });
     const data = await res.json();
     if (data.success) {
-      alert(`Pembayaran Berhasil! Tiket "${tiket.nama}" berhasil disimpan ke database MySQL (ID: #${data.ticketId})`);
-      window.location.href = '../index.html';
+      window.location.href = `../pembayaran.html?id=${data.ticketId}&nama=${encodeURIComponent(username)}&tipe=${encodeURIComponent(tiket.nama)}&email=${encodeURIComponent(email)}&total=${tiket.harga}`;
     } else {
       alert('Gagal: ' + (data.error || 'Terjadi kesalahan'));
     }

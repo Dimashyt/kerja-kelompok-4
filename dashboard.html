@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoyofest - Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-wrapper">
+      <header class="top-header">
+        <a href="index.html" class="btn-home">
+          <i class="ri-home-4-fill"></i> Home
+        </a>
+      <div class="profile-wrapper">
+        <button id="opn-profile" class="profile"><i class="ri-user-fill"></i>Profile</button>
+        <div class="profile-card" id="profile-card">
+          <img src="review dlu/cover.jpg" alt="" class="cover_pic" />
+          <img src="review dlu/profile picture.jpg" alt="" class="profile_pic" />
+          <div class="text">
+          <h1>admin</h1>
+          <p>always be thankful your are amazing</p>
+          <button id="cls-profile" class="profile"><i class="ri-arrow-go-back-line"></i></button>
+          </div>
+        </div>
+      </div>
+      </header>
+      
+      <main class="dashboard-content">
+        <section class="welcome-header">
+          <div class="welcome-text">
+            <h1 id="welcomeAdmin">Halo, Admin Dimas 👋</h1>
+            <p>Pantau status tiket pengunjung, verifikasi kehadiran, dan kelola event Hoyo Fest.</p>
+          </div>
+          <div class="date-badge">
+            <i class="ri-calendar-2-line"></i>
+            <span id="currentDate">Sabtu, 10 Oktober 2026</span>
+          </div>
+        </section>
+        <section class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header">
+              <span>Tiket aktif</span>
+              <i class="ri-coupon-3-fill stat-icon"></i>
+            </div>
+            <h2 class="stat-number" id="countActive">2 tiket</h2>
+            <p class="stat-sub">• Siap di-scan di gate masuk</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span>Sudah di-scan</span>
+              <i class="ri-qr-scan-2-line stat-icon"></i>
+            </div>
+            <h2 class="stat-number" id="countUsed">1 tiket</h2>
+            <p class="stat-sub">• Pengunjung di dalam venue</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span>Total terjual</span>
+              <i class="ri-shopping-bag-3-fill stat-icon"></i>
+            </div>
+            <h2 class="stat-number" id="countTotal">3 tiket</h2>
+            <p class="stat-sub">• Dari database transaksi</p>
+          </div>
+        </section>
+
+        <section class="action-bar">
+          <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all">Semua Tiket</button>
+            <button class="filter-btn" data-filter="active">Tiket Aktif</button>
+            <button class="filter-btn" data-filter="used">Tidak Aktif / Terpakai</button>
+          </div>
+
+          <div class="search-box">
+            <i class="ri-search-line search-icon"></i>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Cari nama pembeli atau ID pesanan..."
+            />
+          </div>
+        </section>
+
+        <section class="tickets-section">
+          <div class="section-title">
+            <h2>Daftar Tiket Pengunjung</h2>
+          </div>
+
+          <div class="tickets-grid" id="ticketsList">
+            <div class="ticket-card" data-status="active">
+              <div class="ticket-banner">
+                <img src="assets/35924e7c3d2a2479a5df856ce6e882f7.jpg" alt="Hoyofest Banner" class="banner-img" />
+                <span class="badge-date">12 NOV</span>
+                <span class="badge-status status-active">Tiket aktif</span>
+              </div>
+              <div class="ticket-body">
+                <h3 class="ticket-title">Hoyo Fest — Ticket Unlimited</h3>
+                <div class="ticket-meta">
+                  <p><i class="ri-time-line"></i> 12 November 2026 · 10:46 WIB</p>
+                  <p><i class="ri-map-
+                <div class="ticket-detail-grid">
+                  <div class="detail-col">pin-2-fill"></i> Prov.Riau, Kec.Bengkalis, Kab.Bengkalis, Senggoro</p>
+                </div>
+                    <span class="detail-label">Nama</span>
+                    <strong class="detail-value buyer-name">Dimas Hidayat</strong>
+                    <span class="detail-label">ID Pesanan</span>
+                    <strong class="detail-value order-id">FAHSGGWJCNI`18912KLJDN27H</strong>
+                  </div>
+                  <div class="detail-col">
+                    <span class="detail-label">Kategori</span>
+                    <strong class="detail-value">Unlimited</strong>
+                    <span class="detail-label">Status Verifikasi</span>
+                    <span class="tag-status tag-ready">Menunggu Scan Gate</span>
+                  </div>
+                </div>
+                <div class="ticket-footer">
+                  <span class="ticket-qty">Unlimited · 1 tiket</span>
+                  <span class="ticket-state state-valid"><i class="ri-checkbox-circle-fill"></i> Siap Scan di Gate</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ticket-card" data-status="active">
+              <div class="ticket-banner">
+                <img src="assets/35924e7c3d2a2479a5df856ce6e882f7.jpg" alt="Hoyofest Banner" class="banner-img" />
+                <span class="badge-date">12 NOV</span>
+                <span class="badge-status status-active">Tiket aktif</span>
+              </div>
+              <div class="ticket-body">
+                <h3 class="ticket-title">Hoyo Fest — Paket 3 Special</h3>
+                <div class="ticket-meta">
+                  <p><i class="ri-time-line"></i> 12 November 2026 · 09:00 WIB</p>
+                  <p><i class="ri-map-pin-2-fill"></i> Prov.Riau, Kec.Bengkalis, Kab.Bengkalis, Senggoro</p>
+                </div>
+                <div class="ticket-detail-grid">
+                  <div class="detail-col">
+                    <span class="detail-label">Nama</span>
+                    <strong class="detail-value buyer-name">Ilhamdi Syahabana</strong>
+                    <span class="detail-label">ID Pesanan</span>
+                    <strong class="detail-value order-id">HOYOSPCL`99281XBB7120KA</strong>
+                  </div>
+                  <div class="detail-col">
+                    <span class="detail-label">Kategori</span>
+                    <strong class="detail-value">Special</strong>
+                    <span class="detail-label">Status Verifikasi</span>
+                    <span class="tag-status tag-ready">Menunggu Scan Gate</span>
+                  </div>
+                </div>
+                <div class="ticket-footer">
+                  <span class="ticket-qty">Special · 1 tiket</span>
+                  <span class="ticket-state state-valid"><i class="ri-checkbox-circle-fill"></i> Siap Scan di Gate</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ticket-card" data-status="used">
+              <div class="ticket-banner">
+                <img src="assets/35924e7c3d2a2479a5df856ce6e882f7.jpg" alt="Hoyofest Banner" class="banner-img" />
+                <span class="badge-date">12 NOV</span>
+                <span class="badge-status status-used">Tidak aktif</span>
+              </div>
+              <div class="ticket-body">
+                <h3 class="ticket-title">Hoyo Fest — Ticket Normal</h3>
+                <div class="ticket-meta">
+                  <p><i class="ri-time-line"></i> 12 November 2026 · 10:00 WIB</p>
+                  <p><i class="ri-map-pin-2-fill"></i> Prov.Riau, Kec.Bengkalis, Kab.Bengkalis, Senggoro</p>
+                </div>
+                <div class="ticket-detail-grid">
+                  <div class="detail-col">
+                    <span class="detail-label">Nama</span>
+                    <strong class="detail-value buyer-name">Azizi Umbrella</strong>
+                    <span class="detail-label">ID Pesanan</span>
+                    <strong class="detail-value order-id">NRML7719`22910AKLZ8821B</strong>
+                  </div>
+                  <div class="detail-col">
+                    <span class="detail-label">Kategori</span>
+                    <strong class="detail-value">Normal</strong>
+                    <span class="detail-label">Status Verifikasi</span>
+                    <span class="tag-status tag-done">Sudah Masuk Venue</span>
+                  </div>
+                </div>
+                <div class="ticket-footer">
+                  <span class="ticket-qty">Normal · 1 tiket</span>
+                  <span class="ticket-state state-invalid"><i class="ri-qr-scan-2-line"></i> Sudah Di-scan di Gate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

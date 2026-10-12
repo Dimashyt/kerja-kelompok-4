@@ -3,6 +3,17 @@ const fs = require('fs');
 const path = require('path');
 const mysql = require('mysql2');
 
+const envPath = path.join(__dirname, '.env');
+if (fs.existsSync(envPath)) {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    envContent.split('\n').forEach(line => {
+        const parts = line.trim().split('=');
+        if (parts[0] && parts.length > 1) {
+            process.env[parts[0].trim()] = parts.slice(1).join('=').trim();
+        }
+    });
+}
+
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -28,6 +39,8 @@ const mimeTypes = {
     '.svg': 'image/svg+xml',
     '.json': 'application/json'
 };
+
+const { sendTicketEmail } = require('./qr.js');
 
 const server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -58,7 +71,7 @@ const server = http.createServer((req, res) => {
         req.on('data', chunk => { body += chunk; });
         req.on('end', () => {
             try {
-                const { nama_pembeli, jenis_tiket, jumlah, total_harga } = JSON.parse(body);
+                const { nama_pembeli, nama, email, jenis_tiket, jumlah, total_harga } = JSON.parse(body);
                 db.query('SELECT stok_tiket FROM daftar_tiket WHERE nama_tiket = ?', [jenis_tiket], (err, rows) => {
                     if (err) {
                         res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -82,10 +95,93 @@ const server = http.createServer((req, res) => {
 
                         const sqlUpdate = 'UPDATE daftar_tiket SET stok_tiket = stok_tiket - ? WHERE nama_tiket = ?';
                         db.query(sqlUpdate, [Number(jumlah), jenis_tiket], () => {
+                            const buyerEmail = email || (nama_pembeli.includes('(') ? nama_pembeli.split('(')[1].replace(')', '').trim() : null);
+                            const buyerName = nama || (nama_pembeli.includes('(') ? nama_pembeli.split('(')[0].trim() : nama_pembeli);
+                            if (buyerEmail) {
+                                sendTicketEmail(buyerEmail, buyerName, jenis_tiket, result.insertId);
+                            }
                             res.writeHead(200, { 'Content-Type': 'application/json' });
                             res.end(JSON.stringify({ success: true, ticketId: result.insertId }));
                         });
                     });
+                });
+            } catch (e) {
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: 'Format data salah' }));
+            }
+        });
+        return;
+    }
+        if (req.url === '/api/register' && req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => { body += chunk; });
+        req.on('end', () => {
+            try {
+                const { username, email, password } = JSON.parse(body);
+
+                if (!username || !email || !password) {
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: 'Semua kolom wajib diisi!' }));
+                    return;
+                }
+
+                const sql = 'INSERT INTO admin (username, email, password) VALUES (?, ?, ?)';
+                db.query(sql, [username, email, password], (err, result) => {
+                    if (err) {
+                        if (err.code === 'ER_DUP_ENTRY') {
+                            res.writeHead(400, { 'Content-Type': 'application/json' });
+                            res.end(JSON.stringify({ error: 'Email sudah pernah terdaftar!' }));
+                            return;
+                        }
+                        res.writeHead(500, { 'Content-Type': 'application/json' });
+                        res.end(JSON.stringify({ error: err.message }));
+                        return;
+                    }
+
+                    res.writeHead(201, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: true, message: 'Admin berhasil didaftarkan!' }));
+                });
+            } catch (e) {
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: 'Format data salah' }));
+            }
+        });
+        return;
+    }
+        if (req.url === '/api/login' && req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => { body += chunk; });
+        req.on('end', () => {
+            try {
+                const { email, password } = JSON.parse(body);
+
+                if (!email || !password) {
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: 'Email dan password wajib diisi!' }));
+                    return;
+                }
+
+                const sql = 'SELECT * FROM admin WHERE email = ? AND password = ?';
+                db.query(sql, [email, password], (err, results) => {
+                    if (err) {
+                        res.writeHead(500, { 'Content-Type': 'application/json' });
+                        res.end(JSON.stringify({ error: err.message }));
+                        return;
+                    }
+
+                    if (results.length === 0) {
+                        res.writeHead(401, { 'Content-Type': 'application/json' });
+                        res.end(JSON.stringify({ error: 'Email atau password salah!' }));
+                        return;
+                    }
+
+                    const admin = results[0];
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ 
+                        success: true, 
+                        message: 'Login berhasil!', 
+                        username: admin.username 
+                    }));
                 });
             } catch (e) {
                 res.writeHead(400, { 'Content-Type': 'application/json' });

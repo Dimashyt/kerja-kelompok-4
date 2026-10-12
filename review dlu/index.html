@@ -23,17 +23,31 @@
         <div class="box_2">
           <div class="scan">
             <h3 class="scan_title">Scan code disini</h3>
-            <div id="contoh"></div>
-            </div>
-            <div class="gambar">
+            <div id="contoh">
               <img
-                src="evanescia tuting.png"
-                alt="my bini"
-                class="evanescia"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&margin=0&data=HOYOFEST-PAYMENT-QRIS-SUCCESS"
+                alt="QR Code Pembayaran"
+                class="qr_img"
               />
             </div>
+            <button class="btn-bayar" onclick="konfirmasiBayar()">Saya sudah bayar</button>
+          </div>
+          <div class="gambar">
+            <img
+              src="assets/nihilux.png"
+              alt="Mascot Hoyofest"
+              class="evanescia"
+            />
+          </div>
         </div>
       </div>
     </section>
+
+    <script>
+      function konfirmasiBayar() {
+        alert('Terima kasih! Pembayaran kamu berhasil diverifikasi.');
+        window.location.href = '../index.html';
+      }
+    </script>
   </body>
 </html>
